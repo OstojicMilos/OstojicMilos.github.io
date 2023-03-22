@@ -1,0 +1,86 @@
+.form {
+    .form-group {
+        margin-bottom: 4rem;
+        position: relative;
+
+        &--radio {
+            margin-left: .6rem;
+        }
+
+        &__radio {
+            display: inline-block;
+
+            @include respond(tab-land) {
+                display: block;
+            }
+
+            &:not(:last-child) {
+                margin-right: 6rem;
+
+                @include respond(tab-land) {
+                    margin-right: 0;
+                    margin-bottom: 1rem;
+                }
+            }
+
+            label {
+                font-size: 1.6rem;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .fake-radio-btn {
+            display: inline-block;
+            height: 1rem;
+            width: 1rem;
+            border-radius: 50%;
+            background-color: transparent;
+            outline: 4px solid $color-primary;
+            outline-offset: .3rem;
+            margin-right: 2rem;
+        }
+    }
+
+    &__input {
+        font-family: inherit;
+        color: inherit;
+        padding: 1.3rem 2rem;
+        border: none;
+        width: 40%;
+        border-bottom: 3px solid transparent;
+        transition: all .3s;
+
+        @include respond(tab-port) {
+            width: 100%;
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom-color: $color-primary;
+        }
+
+        &:not(:placeholder-shown) + .form__label {
+            opacity: 1;
+            transform: translateY(.5rem);
+        }
+
+        &--radio {
+            display: none;
+
+            &:checked + label > .fake-radio-btn {
+                background-color: $color-primary;
+            }
+        }
+    }
+
+    &__label {
+        position: absolute;
+        top: 4.5rem;
+        left: 2rem;
+        opacity: 0;
+        transition: all .3s;
+    }
+
+
+}

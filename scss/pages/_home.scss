@@ -1,0 +1,114 @@
+.section-about {
+    background-color: $color-gray-light;
+    padding: 8rem 0 35rem 0;
+
+    @include respond(tab-port) {
+        padding: 4rem 0 38rem 0;
+    }
+
+    @include respond(phone) {
+        padding: 4rem 0 34rem 0;
+    }
+}
+
+.section-features {
+    background-image: linear-gradient(to right bottom,
+            rgba($color-primary-light, .8),
+            rgba($color-primary-dark, .8)),
+        url(../img/nat-4.jpg);
+    background-size: cover;
+    background-position: top;
+    min-height: 80rem;
+    margin-top: -12.5rem;
+    position: relative;
+    padding-top: 25rem;
+
+    @include respond(tab-land) {
+        padding-top: 21rem;
+    }
+
+    @include respond(tab-port) {
+        padding-top: 16rem;
+        padding-bottom: 15rem;
+    }
+
+    @include respond(phone) {
+        padding-top: 12rem;
+        padding-bottom: 9rem;
+    }
+
+    transform: skewY(-7deg);
+    & > * {
+        transform: skewY(7deg);
+    }
+}
+
+.section-cards {
+    background-color: $color-gray-light;
+    margin-top: -12rem;
+    padding: 32rem 0 14rem 0;
+
+    @include respond(tab-port) {
+        padding: 25rem 0 10rem 0;
+    }
+}
+
+.section-stories {
+    position: relative;
+    padding-top: 10rem;
+    overflow: hidden;
+
+    .video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: .1;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        video {
+            height: 110%;
+        }
+    }
+}
+
+.section-booking {
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+    padding: 17rem 0;
+
+    .booking {
+        border-radius: .3rem;
+        box-shadow: $box-shadow-hover;
+        background-image: linear-gradient(105deg, 
+            rgba($color-white, .9), 
+            rgba($color-white, .9) 50%, 
+            transparent 50%), 
+                          url(../img/nat-10.jpg);
+        background-size: cover;
+        width: 80%;
+        margin: 0 auto;
+        padding: 4rem;
+
+        @include respond(tab-port) {
+            background-image: linear-gradient(
+            rgba($color-white, .85), 
+            rgba($color-white, .85)), 
+                          url(../img/nat-10.jpg);
+            width: fit-content;
+        }
+    }
+}
+
+.user-info {
+    text-align: center;
+    font-size: 1.8rem;
+    color: $color-tertiary-dark;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $color-secondary-light;
+    padding: 0 1rem;
+}

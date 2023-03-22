@@ -1,0 +1,109 @@
+.pop-up {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba($color-gray-dark, .9);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+
+    &:target {
+        opacity: 1;
+        visibility: visible;
+
+        .pop-up__content {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    &__content {
+        height: 50%;
+        width: 113rem;
+        background-color: $color-white;
+        border-radius: 3px;
+        overflow: hidden;
+        display: table;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(.25);
+        transition: all .3s .1s;
+
+        @include respond(tab-land) {
+            max-width: 60rem;
+            height: auto;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        @include respond(phone) {
+            max-width: 95%;
+        }
+
+        &--left {
+            width: 33.33333%;
+            display: table-cell;
+
+            @include respond(tab-land) {
+                width: 100%;
+            }
+
+            @include respond(phone) {
+                display: none;
+            }
+
+            img {
+                height: 50%;
+                width: 100%;
+                display: block;
+
+                @include respond(tab-land) {
+                    display: block;
+                    float: left;
+                    height: 19rem;
+                    width: 50%;
+                }
+            }
+        }
+
+        &--right {
+            width: 66.66666%;
+            display: table-cell;
+            padding: 4rem;
+            vertical-align: top;
+
+            @include respond(tab-land) {
+                display: table-row;
+                width: 100%;
+            }
+        }
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 2rem;
+        right: 3rem;
+        font-size: 3.5rem;
+        line-height: 1;
+        transition: all .2s;
+        cursor: pointer;
+        color: $color-gray;
+        text-decoration: none;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    .paragraph {
+        columns: 2;
+        column-gap: 4rem;
+
+        @include respond(tab-port) {
+            columns: 1;
+        }
+    }
+}
