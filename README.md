@@ -1,6 +1,7 @@
 # Fun with CSS and Less Used Properties
 This project showcases various CSS properties and effects implemented purely with CSS, without the use of JavaScript. The focus of this project is to experiment with lesser-known CSS properties and to implement them in creative ways. The app was originally created for large screens, but it is responsive (though it could be polished further). <br>
-You can see the app in action here: https://ostojicmilos.github.io/ <br>
+You can see the app in action here: https://ostojicmilos.github.io/ `Hover and click on all elements, there are interesting animations everywhere.`<br>
+
 The designs were created by Jonas Schmedtmann. You can check out his amazing courses on his website: https://codingheroes.io/
 
 ## Technologies and Techniques Used
